@@ -21,7 +21,6 @@ pipeline{
                 // deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'tomcat10details', path: '', url: 'http://3.110.41.21:8080/')], contextPath: '/app', war: '**/*.war'
             }
-            dep
         }
         stage("deploy on prod"){
             steps{
