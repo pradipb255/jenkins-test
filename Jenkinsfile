@@ -6,8 +6,12 @@ pipeline{
     stages{
         stage("test"){
             steps{
-                mvn test
-                // sh 'mvn test'
+                // mvn test
+                sh '''
+                    ls
+                    pwd
+                    mvn test
+                '''
             }
         }
         stage("build"){
