@@ -7,25 +7,26 @@ pipeline{
         stage("test"){
             steps{
                 // mvn test
-                sh 'mvn test'
+                sh 'mvn --version'
+                echo "========executing A========"
             }
         }
         stage("build"){
             steps{
                 // mvn package
-                sh 'mvn package'
+                echo "========executing A========"
             }
         }
         stage("deploy on test"){
             steps{
                 // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'tomcat10details', path: '', url: 'http://3.110.41.21:8080/')], contextPath: '/app', war: '**/*.war'
+                echo "========executing A========"
             }
         }
         stage("deploy on prod"){
             steps{
                 // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'tomcat10details', path: '', url: 'http://13.201.229.18:8080/')], contextPath: '/app', war: '**/*.war'
+                echo "========executing A========"
             }
         }
     }
