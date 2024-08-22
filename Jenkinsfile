@@ -10,7 +10,6 @@ pipeline{
                 sh '''
                     ls
                     pwd
-                    mvn install
                     mvn test
                 '''
             }
