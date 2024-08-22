@@ -10,7 +10,7 @@ pipeline{
                 sh '''
                     ls
                     pwd
-                    mvn test
+                    mvn test -X
                 '''
             }
         }
